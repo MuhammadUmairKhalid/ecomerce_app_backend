@@ -7,7 +7,6 @@ from rest_framework.response import Response
 
 class RegisterView(APIView):
     def post(self, request):
-        print("hot ")
         first_name = request.data.get("firstname")
         print(first_name)
         last_name = request.data.get("lastname")
@@ -26,10 +25,11 @@ class Login(APIView):
     def post(self, request):
         email = request.data.get("email")
         password = request.data.get("password")
+        print(email,password)
 
         user = User.objects.filter(email=email, password=password).first()
 
         if user:
-            return Response({"success": "User logged in successfully"}, status=status.HTTP_200_OK)
+            return Response({"message": "User logged in successfully","email":email,"status":"success"}, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
