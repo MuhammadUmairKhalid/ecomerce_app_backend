@@ -33,3 +33,4 @@ class Login(APIView):
             return Response({"message": "User logged in successfully","email":email,"status":"success"}, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+
