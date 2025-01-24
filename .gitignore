@@ -1,0 +1,25 @@
+# Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Django files
+db.sqlite3
+*/migrations/*.py
+__init__.py
+*/migrations/__init__.py
+
+# Virtual environments
+venv/
+
+# Environment variables
+.env
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+*.tiff
+*.webp
